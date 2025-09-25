@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: temporal-sandbox
+  temporal:
+    connection:
+      target: 127.0.0.1:7233
+      namespace: default
+    workers-auto-discovery:
+      packages:
+        - com.womack.temporal
+
+server:
+  port: 8080
+
+logging:
+  level:
+    io.temporal: DEBUG
+    com.example: DEBUG
+    io.opentelemetry: DEBUG
+    io.prometheus: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+opentelemetry:
+  sdk:
+    service:
+      name: temporal-sandbox
+  traces:
+    exporter: otlp
+    endpoint: http://localhost:4317

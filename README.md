@@ -69,9 +69,6 @@ src/main/resources/
    ./mvnw spring-boot:run
    ```
 
-3. **Access the web interface**:
-   Open your browser and navigate to `http://localhost:8080`
-
 ### Running with Observability
 
 The project includes OpenTelemetry configuration for distributed tracing and metrics:

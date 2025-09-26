@@ -14,10 +14,11 @@ server:
 
 logging:
   level:
-    io.temporal: DEBUG
-    com.example: DEBUG
+    io.temporal: INFO
+    com.womack: DEBUG
     io.opentelemetry: DEBUG
     io.prometheus: DEBUG
+    io.micrometer: DEBUG
   pattern:
     console: "%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 

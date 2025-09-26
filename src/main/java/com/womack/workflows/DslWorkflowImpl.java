@@ -6,12 +6,17 @@ import io.temporal.activity.ActivityOptions;
 import io.temporal.common.RetryOptions;
 import io.temporal.failure.ActivityFailure;
 import io.temporal.failure.ApplicationFailure;
+import io.temporal.spring.boot.WorkflowImpl;
 import io.temporal.workflow.ActivityStub;
 import io.temporal.workflow.Workflow;
+import org.springframework.stereotype.Component;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+@WorkflowImpl(taskQueues = "dsl-task-queue")
 public class DslWorkflowImpl implements DslWorkflow {
   @Override
   public String run(Flow flow, String input) {
@@ -42,7 +47,7 @@ public class DslWorkflowImpl implements DslWorkflow {
       // create untyped activity stub and run activity based on flow action
       ActivityStub activityStub = Workflow.newUntypedActivityStub(activityOptionsBuilder.build());
 
-      results.add(activityStub.execute(action.getAction(), String.class, input));
+      results.add(activityStub.execute(action.getAction(), String.class, action.getFlowPayload()));
     }
     return String.join(",", results);
   }

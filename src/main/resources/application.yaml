@@ -7,7 +7,7 @@ spring:
       namespace: default
     workers-auto-discovery:
       packages:
-        - com.womack.temporal
+        - com.womack
 
 server:
   port: 8080
@@ -29,6 +29,16 @@ management:
   endpoint:
     health:
       show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: temporal-dsl-demo
 
 opentelemetry:
   sdk:

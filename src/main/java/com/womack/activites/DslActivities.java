@@ -1,14 +1,15 @@
 package com.womack.activites;
 
+import com.womack.domain.FlowPayload;
 import io.temporal.activity.ActivityInterface;
 
 @ActivityInterface
 public interface DslActivities {
-  String one();
+  String one(FlowPayload flowPayload);
 
-  String two();
+  String two(FlowPayload flowPayload);
 
-  String three();
+  String three(FlowPayload flowPayload);
 
-  String four();
+  String four(FlowPayload flowPayload);
 }

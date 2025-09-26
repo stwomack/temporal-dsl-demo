@@ -6,22 +6,26 @@
     {
       "action": "One",
       "retries": 10,
-      "startToCloseSec": 3
+      "startToCloseSec": 3,
+      "flowPayload": "{\n  \"data\": \"sample data 1\"\n}"
     },
     {
       "action": "Two",
       "retries": 8,
-      "startToCloseSec": 3
+      "startToCloseSec": 3,
+      "flowPayload": "{\n  \"data\": \"sample data 2\"\n}"
     },
     {
       "action": "Three",
       "retries": 10,
-      "startToCloseSec": 4
+      "startToCloseSec": 4,
+      "flowPayload": "{\n  \"data\": \"sample data 3\"\n}"
     },
     {
       "action": "Four",
       "retries": 9,
-      "startToCloseSec": 5
+      "startToCloseSec": 5,
+      "flowPayload": "{\n  \"data\": \"sample data 4\"\n}"
     }
   ]
 }

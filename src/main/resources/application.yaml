@@ -10,7 +10,7 @@ spring:
         - com.womack
 
 server:
-  port: 8080
+  port: 8089
 
 logging:
   level:

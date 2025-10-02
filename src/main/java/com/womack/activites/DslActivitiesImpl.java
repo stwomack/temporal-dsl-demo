@@ -36,7 +36,6 @@ public class DslActivitiesImpl implements DslActivities {
     try {
       Thread.sleep(TimeUnit.SECONDS.toMillis(seconds));
     } catch (InterruptedException ee) {
-      // Empty
     }
   }
 }
